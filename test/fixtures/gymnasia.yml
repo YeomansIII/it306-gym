@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: 
-  maxUsers: 
+  name: MyString
+  currentUsers: 1
+  maxUsers: 1
 
 two:
-  name: 
-  maxUsers: 
+  name: MyString
+  currentUsers: 1
+  maxUsers: 1
