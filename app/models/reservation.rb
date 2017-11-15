@@ -1,4 +1,4 @@
-class Reservation < ApplicationRecord
+class Reservation < ActiveRecord::Base
 	include ActiveModel::Validations
 	belongs_to :timeslots
 	belongs_to :users

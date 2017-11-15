@@ -32,3 +32,772 @@ DEPRECATION WARNING: `#timestamps` was called without specifying an option for `
   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171113153640"]]
   [1m[35m (11.0ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReservations (20171107212921)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReservations (20171107212921)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/jason/dev/git/it390-gym/db/migrate/20171107212921_create_reservations.rb:5)
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "reservations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171107212921"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateUsers (20171115221607)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171115221607"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:30:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/railties-4.2.9/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 24ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-15 17:30:54 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 980ms (Views: 962.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:30:55 -0500
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:30:55 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:30:55 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:30:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:30:55 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:30:55 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:30:55 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:30:55 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-15 17:31:01 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-11-15 17:31:15 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0U8vMv8KVhLuThVv04ST2VkwMi/2Kd+kpryqmhhaWBrZatzIDYebMZNx5TOT5KmsFbmmEyTaTWbJpB6dEnPG6Q==", "user"=>{"email"=>"jyeoman2@gmu.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jyeoman2@gmu.edu' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "jyeoman2@gmu.edu"], ["encrypted_password", "$2a$11$vZMZnNKaHLLb0dFe50cOJOBiLRQHmDT6dHr43xjXQda1bY4QFN966"], ["created_at", "2017-11-15 22:31:16.178506"], ["updated_at", "2017-11-15 22:31:16.178506"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2017-11-15 22:31:16.182624"], ["current_sign_in_at", "2017-11-15 22:31:16.182624"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2017-11-15 22:31:16.183264"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 216ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:31:16 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/railties-4.2.9/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:31:35 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:31:54 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:31:56 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:32:02 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:32:02 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:32:11 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:33:21 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:33:22 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:53 -0500
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:33:56 -0500
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 249ms (Views: 228.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:05 -0500
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:26 -0500
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:34:27 -0500
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:35:38 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered gymnasia/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 33.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:35:38 -0500
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:35:38 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:35:38 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:39 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:39 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:39 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:39 -0500
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:35:49 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:35:50 -0500
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:35:50 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:35:50 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:50 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:50 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:50 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:50 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:35:50 -0500
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:36:41 -0500
+Processing by GymnasiaController#show as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant ApplicationContoller):
+  app/models/timeslot.rb:1:in `<top (required)>'
+  app/controllers/gymnasia_controller.rb:6:in `show'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (119.6ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (227.5ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:37:02 -0500
+Processing by GymnasiaController#show as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant ApplicationRecord):
+  app/models/timeslot.rb:1:in `<top (required)>'
+  app/controllers/gymnasia_controller.rb:6:in `show'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (169.0ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:37:21 -0500
+Processing by GymnasiaController#show as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `has_name' for Timeslot(Table doesn't exist):Class
+Did you mean?  has_one):
+  app/models/timeslot.rb:3:in `<class:Timeslot>'
+  app/models/timeslot.rb:1:in `<top (required)>'
+  app/controllers/gymnasia_controller.rb:6:in `show'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (165.8ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:37:40 -0500
+Processing by GymnasiaController#show as HTML
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+NoMethodError (undefined method `requires' for Timeslot(Table doesn't exist):Class
+Did you mean?  require):
+  app/models/timeslot.rb:4:in `<class:Timeslot>'
+  app/models/timeslot.rb:1:in `<top (required)>'
+  app/controllers/gymnasia_controller.rb:6:in `show'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.6ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.7ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (4.0ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (158.5ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:37:52 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered gymnasia/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 54ms (Views: 35.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:37:52 -0500
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:37:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:37:52 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:37:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:37:52 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:37:52 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:37:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:37:53 -0500
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:38:57 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTimeslot Load (1.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots"[0m
+  Rendered gymnasia/show.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: timeslots: SELECT "timeslots".* FROM "timeslots"):
+    2: <p>Find me in app/views/gymnasia/show.html.erb</p>
+    3: <h1><%= user.email %></h1>
+    4: <h2>Test</h2>
+    5: <% timeslots.each do |t| %>
+    6:     <h3>t</h3>
+    7: <% end %>
+  app/views/gymnasia/show.html.erb:5:in `_app_views_gymnasia_show_html_erb___3721086168708977108_70268288494080'
+  app/controllers/gymnasia_controller.rb:7:in `show'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (78.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (178.0ms)
+
+
+Started GET "/gymnasia/show" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+Processing by GymnasiaController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered gymnasia/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/gymnasia.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+
+
+Started GET "/assets/scaffolds.self-07a67507620a596176d48f43bcff9f7bf3153678d69bcad1606134742abde515.css?body=1" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+
+
+Started GET "/assets/gymnasia.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-11-15 17:39:50 -0500
+
+
+Started GET "/user" for 127.0.0.1 at 2017-11-15 17:40:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/user"):
+  actionpack (4.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.9) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.9) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.9) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.9) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.9) lib/rails/engine.rb:518:in `call'
+  railties (4.2.9) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/routes/_table.html.erb (43.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (183.9ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (77.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (167.8ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2017-11-15 17:40:19 -0500
+
+ActionController::RoutingError (No route matches [GET] "/user/sign_in"):
+  actionpack (4.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.9) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.9) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.9) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.9) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.9) lib/rails/engine.rb:518:in `call'
+  railties (4.2.9) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.9ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (129.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-15 17:40:25 -0500
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:40:25 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/railties-4.2.9/lib/rails/templates/rails/welcome/index.html.erb (0.8ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2017-11-15 17:40:31 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  actionpack (4.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.9) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.9) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.9) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.9) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.9) lib/rails/engine.rb:518:in `call'
+  railties (4.2.9) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.1ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.9ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-15 17:40:48 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.9) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.9) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.9) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.9) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.9) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.9) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.9) lib/rails/engine.rb:518:in `call'
+  railties (4.2.9) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /Users/jason/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.9/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (110.8ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (75.0ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jason/.rvm/gems/ruby-2.4.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (152.1ms)
