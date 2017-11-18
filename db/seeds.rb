@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Gymnasium.create(name: "RAC", currentUsers: 0, maxUsers: 20)
+Gymnasium.create(name: "Skyline", currentUsers: 7, maxUsers: 20)
+Gymnasium.create(name: "The Edge", currentUsers: 13, maxUsers: 20)
+Gymnasium.create(name: "RAC Fields", currentUsers: 19, maxUsers: 20)

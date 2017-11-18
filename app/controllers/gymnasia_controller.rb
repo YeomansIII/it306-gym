@@ -3,7 +3,9 @@ class GymnasiaController < ApplicationController
   end
 
   def show
+    gyms = Gymnasium.all
     timeslots = Timeslot.all
-    render :show, :locals => {user: current_user, timeslots: timeslots}
+    render :show, :locals => {user: current_user, timeslots: timeslots, gyms: gyms}
   end
+
 end
