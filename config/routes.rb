@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   get 'gymnasia/show'
 
-  resources :gymnasia
+  get 'timeslots/new'
+  get 'timeslots/show'
+
+  resources :gymnasia do 
+    resources :timeslots
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

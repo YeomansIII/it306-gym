@@ -1,0 +1,4 @@
+<% gyms.each do |t| %>
+    <h3 class = "gymItem"><%= t.timeslot_listing %> with <%= (t.maxUsers - t.currentUsers) %> spot(s) still available</h3>
+    <%# link_to = "See More", timeslot_listing(t.id)%>
+<% end %>
