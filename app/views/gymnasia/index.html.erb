@@ -1,0 +1,7 @@
+<h1>Gymnasia#index</h1>
+<p>Find me in app/views/gymnasia/index.html.erb</p>
+<h2>Gym Listing</h2>
+<% gyms.each do |t| %>
+    <h3 class = "gymItem"><%= t.name %> with <%= (t.maxUsers - t.currentUsers) %> spot(s) still available</h3>
+    <%# link_to = "See More", timeslot_listing(t.id)%>
+<% end %>

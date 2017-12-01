@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'gymnasia/new'
-
-  get 'gymnasia/show'
+  get 'gymnasia' => 'gymnasia#index'
+  get 'gymnasia/:gym_id' => 'gymnasia#show'
 
   get 'timeslots/new'
   get 'timeslots/show'
-
-  resources :gymnasia do 
-    resources :timeslots
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
