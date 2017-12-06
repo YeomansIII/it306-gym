@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'gymnasia/new'
-  get 'gymnasia' => 'gymnasia#index'
-  get 'gymnasia/:gym_id' => 'gymnasia#show'
+
+  resources :gymnasia
+  # get 'gymnasia/new'
+  # get 'gymnasia' => 'gymnasia#index'
+  # get 'gymnasia/:gym_id' => 'gymnasia#show'
 
   post 'reservation' => 'reservations#create'
 

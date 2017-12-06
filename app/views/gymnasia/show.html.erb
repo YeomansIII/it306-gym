@@ -9,6 +9,7 @@
         Hour <%= i %>
       </h5>
       <% if timeslot.present? %>
+          <%= timeslot.total_reservations || 0 %> registered users
           <%= form_tag("/reservation", method: "post") do %>
               <%= hidden_field_tag(:timeslot_id, timeslot.id) %>
               <%= submit_tag("Register") %>

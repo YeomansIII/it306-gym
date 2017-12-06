@@ -1,5 +1,6 @@
 class Gymnasium < ActiveRecord::Base
-  has_many :timeSlots
+  has_many :timeslots
+  has_many :reservations, through: :timeslots
   validates :name, presence: true
   validate :maxOccupants
   validates :maxUsers, presence: true
