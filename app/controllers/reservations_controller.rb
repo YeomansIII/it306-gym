@@ -1,33 +1,20 @@
 class ReservationsController < ApplicationController
 
-
-  def create_reservation
-       #Render reservation-form-template\
-       render(:template =>'/reservation-form-template')
-  end
-
-
-
-
-  def Postcreate_reservation(timeslot)
+  def create
     # params.require(:timeslot_id)
-    @timeslot = Timeslot.find_by_id!(params.require(:timeslot_id))
-    # Timeslot.where(id: params.require(:timeslot_id)).first   this does the same thing
-    @timeslot=timeslot
-    if @timeslot.blank?
-      #create timeslot
-      #@timeslot=new(timeslot)
+    if params.has_key? :timeslot_id
+      @timeslot = Timeslot.find_by_id!(params.require(:timeslot_id))
+    else
+      @timeslot = Timeslot.create!({date: DateTime.now, hour: params.require(:hour), gymnasia_id: params.require(:gymnasia_id)})
     end
-    @reserve = Reservation.new({user: current_user,timeslot: @timeslot})
-		Redirect_to :timeslot
-	end
-
-  def remove_reservation
-     @reserve = Reservation.find_by_id params[:reservation_id]
-     @reserve.delete! if authorize reserve
+    @reserve = Reservation.create!({user_id: current_user.id, timeslot_id: @timeslot.id})
+    render :successful
   end
 
-
+  def remove
+    @reserve = Reservation.find_by_id params.require(:reservation_id)
+    @reserve.delete! if current_user.id == @reserve.user_id
+  end
 
 end
 

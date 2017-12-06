@@ -3,8 +3,8 @@ class Reservation < ActiveRecord::Base
   belongs_to :timeslots
   belongs_to :users
   attr_reader :timeslot, :user
-  validates :timeslot, presence: true
-  validates :user, presence: true
-  validates :timeslot, uniqueness: {scope: :user}
+  validates :timeslot_id, presence: true
+  validates :user_id, presence: true
+  validates :timeslot_id, uniqueness: {scope: :user_id}
 
 end

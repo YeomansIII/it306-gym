@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201221025) do
+ActiveRecord::Schema.define(version: 20171206220858) do
 
   create_table "gymnasia", force: :cascade do |t|
     t.string   "name"
@@ -29,15 +29,16 @@ ActiveRecord::Schema.define(version: 20171201221025) do
   end
 
   create_table "timeslots", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.datetime "date"
     t.integer  "total_reservations"
-    t.integer  "gym_id"
+    t.integer  "gymnasia_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "hour"
   end
 
-  add_index "timeslots", ["gym_id"], name: "index_timeslots_on_gym_id"
+  add_index "timeslots", ["date"], name: "index_timeslots_on_date"
+  add_index "timeslots", ["gymnasia_id"], name: "index_timeslots_on_gymnasia_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
