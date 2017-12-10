@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
+  
+  devise_scope :user do
+  authenticated :user do
+    root 'home#index', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
 
   resources :gymnasia
   # get 'gymnasia/new'
   # get 'gymnasia' => 'gymnasia#index'
   # get 'gymnasia/:gym_id' => 'gymnasia#show'
-
   post 'reservation' => 'reservations#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
