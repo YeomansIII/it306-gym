@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   devise_scope :user do
     authenticated :user do
-      root 'gymnasia#show', as: :authenticated_root
+      root 'gymnasia#index', as: :authenticated_root
     end
   
     unauthenticated do
