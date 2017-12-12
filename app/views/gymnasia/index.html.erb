@@ -1,7 +1,17 @@
-<h1>Gymnasia#index</h1>
-<p>Find me in app/views/gymnasia/index.html.erb</p>
-<h2>Gym Listing</h2>
+<h3>Gym Listings</h3>
 <% gyms.each do |t| %>
-    <h3 class = "gymItem"><%= t.name %> with <%= (t.maxUsers - t.currentUsers) %> spot(s) still available</h3>
-    <%= link_to "See More", gymnasium_path(t.id)%>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><%= t.name %></span>
+          <p><%= (t.maxUsers - t.currentUsers) %> spot(s) still available</p>
+          <p>A nice gym located on Patriot Circle.</p>
+        </div>
+        <div class="card-action">
+          <%= link_to "View Timeslots", gymnasium_path(t.id) %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

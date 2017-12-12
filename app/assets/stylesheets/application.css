@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.btn, .btn-large, .btn-flat {
+    text-transform: none !important;
+}
+
+.inline-icon {
+    vertical-align: bottom;
+}
