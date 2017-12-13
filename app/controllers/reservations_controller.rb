@@ -17,6 +17,11 @@ class ReservationsController < ApplicationController
     @reserve = Reservation.find_by_id params.require(:reservation_id)
     @reserve.delete! if current_user.id == @reserve.user_id
   end
+  
+  def show 
+    reservations = Reservation.where(user_id: current_user.id)
+    render :show, :locals => {user: current_user, reservations: reservations}
+  end
 
 end
 

@@ -1,0 +1,20 @@
+<h1>Your Reservations</h1>
+<div class="row">
+  <% reservations.each do |t| %>
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">
+            <% if t.id == 1 %>
+            RAC - Indoor Court
+            <% elsif t.id == 2 %>
+            RAC - Outdoor Field
+            <% elsif t.id == 3%>
+            Skyline Fitness - Basketball Court
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
