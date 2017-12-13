@@ -1,16 +1,16 @@
 <h3>Gym Listings</h3>
-<% gyms.each do |t| %>
-  <div class="row">
+<div class="row">
+  <% gyms.each do |t| %>
     <div class="col s12 m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title"><%= t.name %></span>
-          <p>A nice gym located on Patriot Circle.</p>
+          <p class="truncate"><%= t.description %></p>
         </div>
         <div class="card-action">
           <%= link_to "View Timeslots", gymnasium_path(t.id) %>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

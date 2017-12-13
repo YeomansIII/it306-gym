@@ -35,3 +35,7 @@ nav button i {
     height: 36px !important;
     line-height: 36px !important;
 }
+
+.container.padded {
+    padding-top: 20px;
+}
