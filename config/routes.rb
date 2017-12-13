@@ -17,7 +17,7 @@ end
   # get 'gymnasia' => 'gymnasia#index'
   # get 'gymnasia/:gym_id' => 'gymnasia#show'
   post 'reservation' => 'reservations#create'
-
+  get 'reservation/show' => 'reservations#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
