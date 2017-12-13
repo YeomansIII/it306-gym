@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+.btn, .btn-large, .btn-flat {
+    text-transform: none !important;
+}
+
+.inline-icon {
+    vertical-align: bottom;
+}
+
+.nav-wrapper {
+    justify-content: space-between;
+    color: white;
+}
+
+nav .brand-logo {
+    position: relative !important;
+}
+
+nav button i {
+    display: inline !important;
+    height: 36px !important;
+    line-height: 36px !important;
+}
