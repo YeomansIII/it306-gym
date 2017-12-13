@@ -7,7 +7,9 @@ class ReservationsController < ApplicationController
     else
       @timeslot = Timeslot.create!({date: DateTime.now, hour: params.require(:hour), gymnasia_id: params.require(:gymnasia_id)})
     end
-    @reserve = Reservation.create!({user_id: current_user.id, timeslot_id: @timeslot.id})
+    @reserve = Reservation.new({user_id: current_user.id, timeslot_id: @timeslot.id})
+    @reserve.save!
+    @timeslot.reload
     render :successful
   end
 

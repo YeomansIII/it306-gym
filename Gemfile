@@ -29,6 +29,8 @@ gem 'tzinfo-data'
 # Authentication Library
 gem 'devise'
 
+gem 'counter_culture', '~> 1.8'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

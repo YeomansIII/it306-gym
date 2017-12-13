@@ -4,8 +4,5 @@ class RenameReservationCount < ActiveRecord::Migration
     change_column_default :timeslots, :reservations_count, 0
     change_column_null :timeslots, :reservations_count, false
     remove_column :gymnasia, :currentUsers, :integer
-    Timeslot.all.each do |t|
-      Timeslot.reset_counters t.id, :reservations
-    end
   end
 end

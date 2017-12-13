@@ -19,7 +19,7 @@
            timeslot = timeslots.find {|t| t.hour == i} %>
         <li class="collection-item timeslot-item valign-wrapper">
           <div><span class="hour"><%= Hours::NUM_TO_STRING[i] %> to <%= Hours::NUM_TO_STRING[i + 1] %></span><br/>
-            <%= timeslot ? timeslot.reservations_count || 0 : 0 %> registered users
+            <%= timeslot ? timeslot.reservations_count : 0 %> registered users
           </div>
           <% if timeslot.present? %>
             <%= form_tag("/reservation", method: "post") do %>
