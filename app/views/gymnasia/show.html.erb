@@ -8,6 +8,8 @@
         <span class="card-title"><%= gym.name %></span>
         <p class="bold">Capacity: <%= gym.maxUsers %></p>
         <br/>
+        <p>Hours: <%= Hours::NUM_TO_STRING[gym.open_hour] %> to <%= Hours::NUM_TO_STRING[gym.close_hour + 1] %></p>
+        <br/>
         <p><%= gym.description %></p>
       </div>
     </div>
@@ -24,7 +26,7 @@
           <% if timeslot.present? %>
             <%= form_tag("/reservation", method: "post") do %>
               <%= hidden_field_tag(:timeslot_id, timeslot.id) %>
-              <button class="waves-effect waves-teal btn" type="submit" name="commit">
+              <button class="waves-effect waves-teal btn <%= 'disabled' if timeslot.reservations_count == gym.maxUsers %>" type="submit" name="commit">
                 <i class="material-icons inline-icon">event</i> Register
               </button>
             <% end %>
